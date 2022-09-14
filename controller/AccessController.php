@@ -37,4 +37,20 @@ class AccessControlador{
             ),
             "true");
     }
+
+    public function getTokenUser($id, $token){
+        $tokenUser = SecurityApp::realEscapeString($token);
+        $idUser = SecurityApp::realEscapeString($id);
+        $token = $this->repository->getTokenUser($idUser);
+        if($token == $tokenUser){
+            return json_encode(array(
+                "access" => true
+            ));
+        }else{
+            return json_encode(array(
+                "access" => false
+            ));
+        }
+        
+    }
 }
