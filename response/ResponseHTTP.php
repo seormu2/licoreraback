@@ -25,4 +25,12 @@ class ResponseHTTP{
             "status" => 200
         ));
     }
+
+    public static function response401($mensaje){
+        http_response_code(401);
+        return json_encode(array(
+            "message" => $mensaje,
+            "status" => 401
+        ));
+    }
 }
