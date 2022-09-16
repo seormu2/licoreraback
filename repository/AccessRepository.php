@@ -1,4 +1,5 @@
 <?php
+include '../config/ConfigDB.php';
 class AccessRepository{
 
     private $connection;
